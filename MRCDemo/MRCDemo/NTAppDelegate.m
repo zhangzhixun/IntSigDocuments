@@ -7,14 +7,20 @@
 //
 
 #import "NTAppDelegate.h"
+#import "NTRootViewController.h"
 
 @implementation NTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    NTRootViewController *rootViewController = [[NTRootViewController alloc]init];
+    UINavigationController *root = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    [rootViewController release];
+    [self.window setRootViewController:root];
+    [root release];
     [self.window makeKeyAndVisible];
     return YES;
 }
