@@ -22,6 +22,7 @@
     [self.window setRootViewController:root];
     [root release];
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

@@ -11,7 +11,7 @@
 
 
 @interface NTRootViewController : UITableViewController<TigerProtocol>{
-    NSMutableArray *tigerArray;
+    NSMutableArray *_tigerArray;
 }
 @property(nonatomic,retain) NTDetailViewController *detailViewController;
 @property (nonatomic, strong) NSMutableArray *catArray;

@@ -21,6 +21,7 @@
 		36AFB0091843274000BC8C4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AFAFF11843274000BC8C4C /* UIKit.framework */; };
 		36AFB0111843274000BC8C4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36AFB00F1843274000BC8C4C /* InfoPlist.strings */; };
 		36AFB0131843274000BC8C4C /* MRCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFB0121843274000BC8C4C /* MRCDemoTests.m */; };
+		36B6377D1846E47F006FBE9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B6377C1846E47F006FBE9D /* CoreLocation.framework */; };
 		36C4878A1843541100D9D5B7 /* NTTiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C487891843541100D9D5B7 /* NTTiger.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		36AFB00E1843274000BC8C4C /* MRCDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MRCDemoTests-Info.plist"; sourceTree = "<group>"; };
 		36AFB0101843274000BC8C4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36AFB0121843274000BC8C4C /* MRCDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRCDemoTests.m; sourceTree = "<group>"; };
+		36B6377C1846E47F006FBE9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		36C487881843541100D9D5B7 /* NTTiger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTiger.h; sourceTree = "<group>"; };
 		36C487891843541100D9D5B7 /* NTTiger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTiger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B6377D1846E47F006FBE9D /* CoreLocation.framework in Frameworks */,
 				36AFAFF01843274000BC8C4C /* CoreGraphics.framework in Frameworks */,
 				36AFAFF21843274000BC8C4C /* UIKit.framework in Frameworks */,
 				36AFAFEE1843274000BC8C4C /* Foundation.framework in Frameworks */,
@@ -105,6 +108,7 @@
 		36AFAFEC1843274000BC8C4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36B6377C1846E47F006FBE9D /* CoreLocation.framework */,
 				36AFAFED1843274000BC8C4C /* Foundation.framework */,
 				36AFAFEF1843274000BC8C4C /* CoreGraphics.framework */,
 				36AFAFF11843274000BC8C4C /* UIKit.framework */,

@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NTTiger : NSObject{
-    NSString *voice;
+@interface NTTiger : NSObject<NSCopying,NSCoding>{
+    NSString *_voice;
 }
 
-@property(nonatomic,retain)NSString *voice;
+@property(nonatomic,copy)NSString *voice;
 
 - (id)initWithVoice:(NSString *)thevoice;
+- (NSString *)name;
 
 @end
