@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5EE5B5B3-4EEF-4E0A-BB24-0DED76B6294F</string>
+	<string>F943252C-0A93-4EAF-A9E1-E190324715ED</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MRCDemo</string>
+	<string>NavAnimationDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D06AAE34-0BF4-40EA-AD76-FD0333D8327C</key>
 		<string>https://github.com/zhangzhixun/IntSigDocuments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MRCDemo/MRCDemo.xcodeproj/project.xcworkspace</string>
+	<string>NavAnimationDemo/NavAnimationDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D06AAE34-0BF4-40EA-AD76-FD0333D8327C</key>
