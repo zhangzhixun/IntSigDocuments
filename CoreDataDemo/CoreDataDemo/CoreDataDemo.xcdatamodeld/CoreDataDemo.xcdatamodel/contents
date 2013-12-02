@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ContactInfo" representedClassName="ContactInfo" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="20" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="school" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" attributeType="String" defaultValueString="male" syncable="YES"/>
+        <relationship name="affiliation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="owner" inverseEntity="School" syncable="YES"/>
+    </entity>
+    <entity name="School" representedClassName="School" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="schoolName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ContactInfo" inverseName="affiliation" inverseEntity="ContactInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ContactInfo" positionX="142" positionY="149" width="128" height="118"/>
+        <element name="School" positionX="333" positionY="189" width="128" height="103"/>
+    </elements>
+</model>
