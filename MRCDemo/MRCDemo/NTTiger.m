@@ -32,7 +32,7 @@
 - (void)setVoice:(NSString *)thevoice{
     if (_voice != thevoice) {
         [_voice release];
-        _voice = [thevoice retain]; 
+        _voice = [thevoice retain];
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3619D65A18473A50005941D6 /* NTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619D65918473A50005941D6 /* NTScrollView.m */; };
+		3619D65C1847449B005941D6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3619D65B1847449B005941D6 /* CoreFoundation.framework */; };
 		368785F71844307C00688A8E /* NTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368785F61844307C00688A8E /* NTRootViewController.m */; };
 		368785FA184430F500688A8E /* NTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368785F9184430F500688A8E /* NTDetailViewController.m */; };
 		36AFAFEE1843274000BC8C4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AFAFED1843274000BC8C4C /* Foundation.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3619D65818473A50005941D6 /* NTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTScrollView.h; path = ../NTScrollView.h; sourceTree = "<group>"; };
+		3619D65918473A50005941D6 /* NTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTScrollView.m; path = ../NTScrollView.m; sourceTree = "<group>"; };
+		3619D65B1847449B005941D6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		368785F51844307C00688A8E /* NTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTRootViewController.h; sourceTree = "<group>"; };
 		368785F61844307C00688A8E /* NTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTRootViewController.m; sourceTree = "<group>"; };
 		368785F8184430F500688A8E /* NTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTDetailViewController.h; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3619D65C1847449B005941D6 /* CoreFoundation.framework in Frameworks */,
 				36B6377D1846E47F006FBE9D /* CoreLocation.framework in Frameworks */,
 				36AFAFF01843274000BC8C4C /* CoreGraphics.framework in Frameworks */,
 				36AFAFF21843274000BC8C4C /* UIKit.framework in Frameworks */,
@@ -108,6 +114,7 @@
 		36AFAFEC1843274000BC8C4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3619D65B1847449B005941D6 /* CoreFoundation.framework */,
 				36B6377C1846E47F006FBE9D /* CoreLocation.framework */,
 				36AFAFED1843274000BC8C4C /* Foundation.framework */,
 				36AFAFEF1843274000BC8C4C /* CoreGraphics.framework */,
@@ -120,9 +127,17 @@
 		36AFAFF31843274000BC8C4C /* MRCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3619D65818473A50005941D6 /* NTScrollView.h */,
+				3619D65918473A50005941D6 /* NTScrollView.m */,
 				36AFAFFC1843274000BC8C4C /* NTAppDelegate.h */,
 				36AFAFFD1843274000BC8C4C /* NTAppDelegate.m */,
 				36AFAFFF1843274000BC8C4C /* Images.xcassets */,
+				36C487881843541100D9D5B7 /* NTTiger.h */,
+				36C487891843541100D9D5B7 /* NTTiger.m */,
+				368785F51844307C00688A8E /* NTRootViewController.h */,
+				368785F61844307C00688A8E /* NTRootViewController.m */,
+				368785F8184430F500688A8E /* NTDetailViewController.h */,
+				368785F9184430F500688A8E /* NTDetailViewController.m */,
 				36AFAFF41843274000BC8C4C /* Supporting Files */,
 			);
 			path = MRCDemo;
@@ -135,12 +150,6 @@
 				36AFAFF61843274000BC8C4C /* InfoPlist.strings */,
 				36AFAFF91843274000BC8C4C /* main.m */,
 				36AFAFFB1843274000BC8C4C /* MRCDemo-Prefix.pch */,
-				36C487881843541100D9D5B7 /* NTTiger.h */,
-				36C487891843541100D9D5B7 /* NTTiger.m */,
-				368785F51844307C00688A8E /* NTRootViewController.h */,
-				368785F61844307C00688A8E /* NTRootViewController.m */,
-				368785F8184430F500688A8E /* NTDetailViewController.h */,
-				368785F9184430F500688A8E /* NTDetailViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -264,6 +273,7 @@
 				36AFAFFA1843274000BC8C4C /* main.m in Sources */,
 				368785F71844307C00688A8E /* NTRootViewController.m in Sources */,
 				36C4878A1843541100D9D5B7 /* NTTiger.m in Sources */,
+				3619D65A18473A50005941D6 /* NTScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
