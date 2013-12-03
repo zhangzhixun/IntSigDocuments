@@ -7,6 +7,7 @@
 //
 
 #import "NADetailViewController.h"
+#import "NACoreAnimationController.h"
 
 @interface NADetailViewController ()
 
@@ -26,8 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.customBtn addTarget:self action:@selector(coreAnimationGoBack) forControlEvents:UIControlEventTouchUpInside];
     [self.textLabel addTarget:self action:@selector(customGoBack) forControlEvents:UIControlEventTouchUpInside];
-	// Do any additional setup after loading the view.
+    
+    //Core Animation
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +47,13 @@
                          [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
                      }];
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+- (void)coreAnimationGoBack{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    
+    NADetailViewController *caVC = [storyBoard instantiateViewControllerWithIdentifier:@"Core"];
+    [self.navigationController pushViewController:caVC animated:YES];
 }
 
 

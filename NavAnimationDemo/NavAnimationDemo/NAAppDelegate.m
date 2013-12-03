@@ -14,6 +14,8 @@
 {
     // Override point for customization after application launch.
     [self.window setBackgroundColor:[UIColor whiteColor]];
+//    [self.window setFrame:CGRectMake(10, 10, 200, 100)];
+     
     return YES;
 }
 							

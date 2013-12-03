@@ -11,5 +11,6 @@
 @interface NADetailViewController : UIViewController
 
 @property(nonatomic,assign)IBOutlet UIButton *textLabel;
+@property(nonatomic,assign)IBOutlet UIButton *customBtn;
 
 @end
