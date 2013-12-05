@@ -8,7 +8,7 @@
 
 #import "NAViewController.h"
 #import "NADetailViewController.h"
-#import "NATransitionAnimation.h"
+#import "NAPopTransitionAnimation.h"
 
 @interface NAViewController ()
 
@@ -22,8 +22,10 @@
 {
     [super viewDidLoad];
     [self.pushBtn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationController.delegate = self;
-	// Do any additional setup after loading the view, typically from a nib.
+
+//    self.extendedLayoutIncludesOpaqueBars = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeBottom | UIRectEdgeLeft | UIRectEdgeRight;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,37 +46,6 @@
 //                         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
 //                     }];
     [self.navigationController pushViewController:nextView animated:YES];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-//available in iOS_2_0 and later
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
-}
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
-}
-
-//available in iOS_7_0 and later
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
-                                  animationControllerForOperation:(UINavigationControllerOperation)operation
-                                               fromViewController:(UIViewController *)fromVC
-                                                 toViewController:(UIViewController *)toVC{
-    if (operation == UINavigationControllerOperationPush) {
-        return nil;
-    }
-    if (operation == UINavigationControllerOperationPop) {
-        return [[NATransitionAnimation new] autorelease];
-    }
-    return nil;
-}
-
-- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
-                         interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-    return nil;
-    
 }
 
 

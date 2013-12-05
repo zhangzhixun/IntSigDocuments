@@ -21,8 +21,11 @@
 		3615D99A184C5708001819D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3615D998184C5708001819D4 /* InfoPlist.strings */; };
 		3615D99C184C5708001819D4 /* NavAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D99B184C5708001819D4 /* NavAnimationDemoTests.m */; };
 		3615D9A7184C5C4D001819D4 /* NADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D9A6184C5C4D001819D4 /* NADetailViewController.m */; };
-		3615D9AD184C72C7001819D4 /* NATransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D9AC184C72C7001819D4 /* NATransitionAnimation.m */; };
+		3615D9AD184C72C7001819D4 /* NAPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */; };
 		3615D9AF184C8A4D001819D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3615D9AE184C8A4D001819D4 /* UIKit.framework */; };
+		36835F4C184DD002009C7D85 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36835F4B184DD002009C7D85 /* Utility.m */; };
+		36852EB2184F2C8200F77A26 /* NANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB1184F2C8200F77A26 /* NANavigationController.m */; };
+		36852EB5184F39C400F77A26 /* NAPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */; };
 		36C76591184DA4B200342115 /* NACoreAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C76590184DA4B200342115 /* NACoreAnimationController.m */; };
 		36C76593184DA6AC00342115 /* sgx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36C76592184DA6AC00342115 /* sgx.jpg */; };
 /* End PBXBuildFile section */
@@ -59,9 +62,15 @@
 		3615D99B184C5708001819D4 /* NavAnimationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavAnimationDemoTests.m; sourceTree = "<group>"; };
 		3615D9A5184C5C4D001819D4 /* NADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADetailViewController.h; sourceTree = "<group>"; };
 		3615D9A6184C5C4D001819D4 /* NADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NADetailViewController.m; sourceTree = "<group>"; };
-		3615D9AB184C72C7001819D4 /* NATransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NATransitionAnimation.h; path = ../NATransitionAnimation.h; sourceTree = "<group>"; };
-		3615D9AC184C72C7001819D4 /* NATransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NATransitionAnimation.m; path = ../NATransitionAnimation.m; sourceTree = "<group>"; };
+		3615D9AB184C72C7001819D4 /* NAPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAPopTransitionAnimation.h; path = ../NAPopTransitionAnimation.h; sourceTree = "<group>"; };
+		3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NAPopTransitionAnimation.m; path = ../NAPopTransitionAnimation.m; sourceTree = "<group>"; };
 		3615D9AE184C8A4D001819D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36835F4A184DD002009C7D85 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		36835F4B184DD002009C7D85 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		36852EB0184F2C8200F77A26 /* NANavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NANavigationController.h; sourceTree = "<group>"; };
+		36852EB1184F2C8200F77A26 /* NANavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NANavigationController.m; sourceTree = "<group>"; };
+		36852EB3184F39C400F77A26 /* NAPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPushTransitionAnimation.h; sourceTree = "<group>"; };
+		36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPushTransitionAnimation.m; sourceTree = "<group>"; };
 		36C7658F184DA4B200342115 /* NACoreAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoreAnimationController.h; sourceTree = "<group>"; };
 		36C76590184DA4B200342115 /* NACoreAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NACoreAnimationController.m; sourceTree = "<group>"; };
 		36C76592184DA6AC00342115 /* sgx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sgx.jpg; sourceTree = "<group>"; };
@@ -123,8 +132,7 @@
 		3615D973184C5708001819D4 /* NavAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3615D9AB184C72C7001819D4 /* NATransitionAnimation.h */,
-				3615D9AC184C72C7001819D4 /* NATransitionAnimation.m */,
+				36C4799418502C7100E0BD47 /* TransitionAnimation */,
 				3615D97C184C5708001819D4 /* NAAppDelegate.h */,
 				3615D97D184C5708001819D4 /* NAAppDelegate.m */,
 				3615D97F184C5708001819D4 /* Main_iPhone.storyboard */,
@@ -137,6 +145,8 @@
 				3615D986184C5708001819D4 /* NAViewController.m */,
 				3615D988184C5708001819D4 /* Images.xcassets */,
 				3615D974184C5708001819D4 /* Supporting Files */,
+				36835F4A184DD002009C7D85 /* Utility.h */,
+				36835F4B184DD002009C7D85 /* Utility.m */,
 			);
 			path = NavAnimationDemo;
 			sourceTree = "<group>";
@@ -169,6 +179,19 @@
 				3615D998184C5708001819D4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36C4799418502C7100E0BD47 /* TransitionAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				36852EB0184F2C8200F77A26 /* NANavigationController.h */,
+				36852EB1184F2C8200F77A26 /* NANavigationController.m */,
+				3615D9AB184C72C7001819D4 /* NAPopTransitionAnimation.h */,
+				3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */,
+				36852EB3184F39C400F77A26 /* NAPushTransitionAnimation.h */,
+				36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */,
+			);
+			name = TransitionAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,11 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3615D9AD184C72C7001819D4 /* NATransitionAnimation.m in Sources */,
+				3615D9AD184C72C7001819D4 /* NAPopTransitionAnimation.m in Sources */,
 				3615D9A7184C5C4D001819D4 /* NADetailViewController.m in Sources */,
 				3615D987184C5708001819D4 /* NAViewController.m in Sources */,
 				3615D97A184C5708001819D4 /* main.m in Sources */,
+				36835F4C184DD002009C7D85 /* Utility.m in Sources */,
 				36C76591184DA4B200342115 /* NACoreAnimationController.m in Sources */,
+				36852EB5184F39C400F77A26 /* NAPushTransitionAnimation.m in Sources */,
+				36852EB2184F2C8200F77A26 /* NANavigationController.m in Sources */,
 				3615D97E184C5708001819D4 /* NAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +443,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NavAnimationDemo/NavAnimationDemo-Prefix.pch";
 				INFOPLIST_FILE = "NavAnimationDemo/NavAnimationDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -431,6 +458,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NavAnimationDemo/NavAnimationDemo-Prefix.pch";
 				INFOPLIST_FILE = "NavAnimationDemo/NavAnimationDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
