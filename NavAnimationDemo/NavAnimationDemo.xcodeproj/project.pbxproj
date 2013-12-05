@@ -21,11 +21,11 @@
 		3615D99A184C5708001819D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3615D998184C5708001819D4 /* InfoPlist.strings */; };
 		3615D99C184C5708001819D4 /* NavAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D99B184C5708001819D4 /* NavAnimationDemoTests.m */; };
 		3615D9A7184C5C4D001819D4 /* NADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D9A6184C5C4D001819D4 /* NADetailViewController.m */; };
-		3615D9AD184C72C7001819D4 /* NAPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */; };
 		3615D9AF184C8A4D001819D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3615D9AE184C8A4D001819D4 /* UIKit.framework */; };
 		36835F4C184DD002009C7D85 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36835F4B184DD002009C7D85 /* Utility.m */; };
 		36852EB2184F2C8200F77A26 /* NANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB1184F2C8200F77A26 /* NANavigationController.m */; };
 		36852EB5184F39C400F77A26 /* NAPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */; };
+		36C4799718502DBB00E0BD47 /* NAPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C4799618502DBB00E0BD47 /* NAPopTransitionAnimation.m */; };
 		36C76591184DA4B200342115 /* NACoreAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C76590184DA4B200342115 /* NACoreAnimationController.m */; };
 		36C76593184DA6AC00342115 /* sgx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36C76592184DA6AC00342115 /* sgx.jpg */; };
 /* End PBXBuildFile section */
@@ -62,8 +62,6 @@
 		3615D99B184C5708001819D4 /* NavAnimationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavAnimationDemoTests.m; sourceTree = "<group>"; };
 		3615D9A5184C5C4D001819D4 /* NADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADetailViewController.h; sourceTree = "<group>"; };
 		3615D9A6184C5C4D001819D4 /* NADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NADetailViewController.m; sourceTree = "<group>"; };
-		3615D9AB184C72C7001819D4 /* NAPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAPopTransitionAnimation.h; path = ../NAPopTransitionAnimation.h; sourceTree = "<group>"; };
-		3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NAPopTransitionAnimation.m; path = ../NAPopTransitionAnimation.m; sourceTree = "<group>"; };
 		3615D9AE184C8A4D001819D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		36835F4A184DD002009C7D85 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		36835F4B184DD002009C7D85 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
@@ -71,6 +69,8 @@
 		36852EB1184F2C8200F77A26 /* NANavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NANavigationController.m; sourceTree = "<group>"; };
 		36852EB3184F39C400F77A26 /* NAPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPushTransitionAnimation.h; sourceTree = "<group>"; };
 		36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPushTransitionAnimation.m; sourceTree = "<group>"; };
+		36C4799518502DBB00E0BD47 /* NAPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPopTransitionAnimation.h; sourceTree = "<group>"; };
+		36C4799618502DBB00E0BD47 /* NAPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPopTransitionAnimation.m; sourceTree = "<group>"; };
 		36C7658F184DA4B200342115 /* NACoreAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoreAnimationController.h; sourceTree = "<group>"; };
 		36C76590184DA4B200342115 /* NACoreAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NACoreAnimationController.m; sourceTree = "<group>"; };
 		36C76592184DA6AC00342115 /* sgx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sgx.jpg; sourceTree = "<group>"; };
@@ -184,10 +184,10 @@
 		36C4799418502C7100E0BD47 /* TransitionAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				36C4799518502DBB00E0BD47 /* NAPopTransitionAnimation.h */,
+				36C4799618502DBB00E0BD47 /* NAPopTransitionAnimation.m */,
 				36852EB0184F2C8200F77A26 /* NANavigationController.h */,
 				36852EB1184F2C8200F77A26 /* NANavigationController.m */,
-				3615D9AB184C72C7001819D4 /* NAPopTransitionAnimation.h */,
-				3615D9AC184C72C7001819D4 /* NAPopTransitionAnimation.m */,
 				36852EB3184F39C400F77A26 /* NAPushTransitionAnimation.h */,
 				36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */,
 			);
@@ -294,7 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3615D9AD184C72C7001819D4 /* NAPopTransitionAnimation.m in Sources */,
 				3615D9A7184C5C4D001819D4 /* NADetailViewController.m in Sources */,
 				3615D987184C5708001819D4 /* NAViewController.m in Sources */,
 				3615D97A184C5708001819D4 /* main.m in Sources */,
@@ -302,6 +301,7 @@
 				36C76591184DA4B200342115 /* NACoreAnimationController.m in Sources */,
 				36852EB5184F39C400F77A26 /* NAPushTransitionAnimation.m in Sources */,
 				36852EB2184F2C8200F77A26 /* NANavigationController.m in Sources */,
+				36C4799718502DBB00E0BD47 /* NAPopTransitionAnimation.m in Sources */,
 				3615D97E184C5708001819D4 /* NAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
