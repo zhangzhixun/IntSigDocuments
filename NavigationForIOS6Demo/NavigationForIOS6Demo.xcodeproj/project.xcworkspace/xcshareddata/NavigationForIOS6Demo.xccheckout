@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5049EAB7-CDC7-4A6D-A4D7-AEB10E58F56F</string>
+	<string>8D613022-F54D-4834-983A-05F3FC1849A4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>NavAnimationDemo</string>
+	<string>NavigationForIOS6Demo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D06AAE34-0BF4-40EA-AD76-FD0333D8327C</key>
 		<string>https://github.com/zhangzhixun/IntSigDocuments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>NavAnimationDemo/NavAnimationDemo.xcodeproj/project.xcworkspace</string>
+	<string>NavigationForIOS6Demo/NavigationForIOS6Demo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D06AAE34-0BF4-40EA-AD76-FD0333D8327C</key>
