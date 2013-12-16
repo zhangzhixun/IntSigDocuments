@@ -26,6 +26,7 @@
 		36852EB2184F2C8200F77A26 /* NANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB1184F2C8200F77A26 /* NANavigationController.m */; };
 		36852EB5184F39C400F77A26 /* NAPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */; };
 		36C4799718502DBB00E0BD47 /* NAPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C4799618502DBB00E0BD47 /* NAPopTransitionAnimation.m */; };
+		36C4799B185056C900E0BD47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C4799A185056C900E0BD47 /* QuartzCore.framework */; };
 		36C76591184DA4B200342115 /* NACoreAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C76590184DA4B200342115 /* NACoreAnimationController.m */; };
 		36C76593184DA6AC00342115 /* sgx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36C76592184DA6AC00342115 /* sgx.jpg */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		36852EB4184F39C400F77A26 /* NAPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPushTransitionAnimation.m; sourceTree = "<group>"; };
 		36C4799518502DBB00E0BD47 /* NAPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPopTransitionAnimation.h; sourceTree = "<group>"; };
 		36C4799618502DBB00E0BD47 /* NAPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPopTransitionAnimation.m; sourceTree = "<group>"; };
+		36C4799A185056C900E0BD47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		36C7658F184DA4B200342115 /* NACoreAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoreAnimationController.h; sourceTree = "<group>"; };
 		36C76590184DA4B200342115 /* NACoreAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NACoreAnimationController.m; sourceTree = "<group>"; };
 		36C76592184DA6AC00342115 /* sgx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sgx.jpg; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C4799B185056C900E0BD47 /* QuartzCore.framework in Frameworks */,
 				3615D9AF184C8A4D001819D4 /* UIKit.framework in Frameworks */,
 				3615D970184C5708001819D4 /* CoreGraphics.framework in Frameworks */,
 				3615D96E184C5708001819D4 /* Foundation.framework in Frameworks */,
@@ -121,6 +124,7 @@
 		3615D96C184C5708001819D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36C4799A185056C900E0BD47 /* QuartzCore.framework */,
 				3615D9AE184C8A4D001819D4 /* UIKit.framework */,
 				3615D96D184C5708001819D4 /* Foundation.framework */,
 				3615D96F184C5708001819D4 /* CoreGraphics.framework */,

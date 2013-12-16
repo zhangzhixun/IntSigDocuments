@@ -37,6 +37,7 @@
     [self.textField setTextAlignment:NSTextAlignmentLeft];
     self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.textField.delegate = self;
+    [self.textField setKeyboardType:UIKeyboardTypeDefault];
     [self.view addSubview:self.textField];
     
     self.textField1 = [[UITextField alloc]initWithFrame:CGRectMake(20, 160, 150, 50)];
@@ -44,6 +45,7 @@
     [self.textField1 setBorderStyle:UITextBorderStyleRoundedRect];
     self.textField1.tag = 101;
     self.textField1.delegate = self;
+    [self.textField1 setKeyboardType:UIKeyboardTypeAlphabet];
     [self.view addSubview:self.textField1];
     
     _transBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 250, 80, 30)];
@@ -58,6 +60,7 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resignTextField)];
     [self.view addGestureRecognizer:tapGesture];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardDidChange:) name:UITextInputCurrentInputModeDidChangeNotification object:nil];
 
 }
 
@@ -75,37 +78,42 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     //do not clear password when typing again
-    if (textField.text.length > 0 && range.location == textField.text.length && string.length > 0) {
-        NSMutableString *text = [NSMutableString stringWithFormat:@"%@%@",textField.text,string];
-        [textField setText:text];
+//    if (textField.text.length > 0 && range.location == textField.text.length && string.length > 0) {
+//        NSMutableString *text = [NSMutableString stringWithFormat:@"%@%@",textField.text,string];
+//        [textField setText:text];
+//        return NO;
+//    }
+//    
+//    // delete password one by one
+//    if (range.location > 0 && range.length == 1 && string.length == 0)
+//    {
+//        // Stores cursor position
+//        UITextPosition *beginning = textField.beginningOfDocument;
+//        UITextPosition *start = [textField positionFromPosition:beginning offset:range.location];
+//        NSInteger cursorOffset = [textField offsetFromPosition:beginning toPosition:start] + string.length;
+//        
+//        // Save the current text, in case iOS deletes the whole text
+//        NSString *text = textField.text;
+//        
+//        // Trigger deletion
+//        [textField deleteBackward];
+//        
+//        // iOS deleted the entire string
+//        if (textField.text.length != text.length - 1)
+//        {
+//            textField.text = [text stringByReplacingCharactersInRange:range withString:string];
+//            // Update cursor position
+//            UITextPosition *newCursorPosition = [textField positionFromPosition:textField.beginningOfDocument offset:cursorOffset];
+//            UITextRange *newSelectedRange = [textField textRangeFromPosition:newCursorPosition toPosition:newCursorPosition];
+//            [textField setSelectedTextRange:newSelectedRange];
+//        }
+//        return NO;
+//    }
+    UITextInputMode *mode = [UITextInputMode currentInputMode];
+    if (![mode.primaryLanguage  isEqual: @"en-US"]) {
         return NO;
     }
-    
-    // delete password one by one
-    if (range.location > 0 && range.length == 1 && string.length == 0)
-    {
-        // Stores cursor position
-        UITextPosition *beginning = textField.beginningOfDocument;
-        UITextPosition *start = [textField positionFromPosition:beginning offset:range.location];
-        NSInteger cursorOffset = [textField offsetFromPosition:beginning toPosition:start] + string.length;
-        
-        // Save the current text, in case iOS deletes the whole text
-        NSString *text = textField.text;
-        
-        // Trigger deletion
-        [textField deleteBackward];
-        
-        // iOS deleted the entire string
-        if (textField.text.length != text.length - 1)
-        {
-            textField.text = [text stringByReplacingCharactersInRange:range withString:string];
-            // Update cursor position
-            UITextPosition *newCursorPosition = [textField positionFromPosition:textField.beginningOfDocument offset:cursorOffset];
-            UITextRange *newSelectedRange = [textField textRangeFromPosition:newCursorPosition toPosition:newCursorPosition];
-            [textField setSelectedTextRange:newSelectedRange];
-        }
-        return NO;
-    }
+    [UITextInputMode activeInputModes];
     return YES;
 }
 
@@ -124,6 +132,14 @@
         [self.textField setSecureTextEntry:YES];
     [self.textField becomeFirstResponder];
 
+}
+
+- (void)keyBoardDidChange:(NSNotification *)notification{
+    UITextInputMode *mode = [UITextInputMode currentInputMode];
+    if (![mode.primaryLanguage  isEqual: @"en-US"]) {
+        // remind user
+        
+    }
 }
 
 @end
