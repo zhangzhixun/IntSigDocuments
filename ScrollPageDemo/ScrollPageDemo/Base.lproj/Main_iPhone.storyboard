@@ -55,19 +55,8 @@
                     <view key="view" contentMode="scaleToFill" id="WrZ-lH-ZVS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QuN-t1-9Y7">
-                                <rect key="frame" x="125" y="440" width="70" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" red="0.77660491180000002" green="0.40525036580000001" blue="0.80959154209999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.61710146649999997" green="0.80959154209999995" blue="0.38007345619999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="pageControl" destination="QuN-t1-9Y7" id="iCp-MD-9VY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPF-tu-MC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

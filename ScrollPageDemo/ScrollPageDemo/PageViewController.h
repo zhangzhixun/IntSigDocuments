@@ -13,6 +13,6 @@
     NSArray *pictures;
 }
 
-@property (nonatomic,weak)IBOutlet UIPageControl *pageControl;
+@property (nonatomic,strong) UIPageControl *pageControl;
 
 @end

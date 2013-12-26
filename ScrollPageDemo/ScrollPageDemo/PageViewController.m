@@ -32,7 +32,8 @@
     
     scrollView = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * [pictures count], [UIScreen mainScreen].bounds.size.height);
-//    scrollView.contentOffset = CGPointMake([UIScreen mainScreen].bounds.size.width * [pictures count]/2, 0);
+    scrollView.contentOffset = CGPointMake(0, 0);
+    scrollView.bounces = NO;
 //    scrollView.contentInset = UIEdgeInsetsMake(20, 10, 20, 10);
     [scrollView setBackgroundColor:[UIColor colorWithWhite:0.2 alpha:0.8]];
     scrollView.delegate = self;
@@ -44,10 +45,14 @@
         [scrollView addSubview:imgView];
     }
     
-    [self.view bringSubviewToFront:self.pageControl];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, 30)];
     [self.pageControl setTintColor:[UIColor colorWithCGColor:[UIColor redColor].CGColor]];
+    self.pageControl.numberOfPages = 3;
     [self.pageControl setCurrentPage:0];
-    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    self.pageControl.pageIndicatorTintColor = [UIColor purpleColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.pageControl];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,19 +61,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)changePage:(id)sender{
-    int page = self.pageControl.currentPage;
-    [UIView animateWithDuration:0.5 animations:^{
-        [scrollView setContentOffset:CGPointMake(page * 320, 0)];
-    } completion:^(BOOL finished) {
-        
-    }];
+- (void)changePage:(UIPageControl *)sender{
+
+    CGSize viewSize = scrollView.frame.size;
+    CGRect rect = CGRectMake(sender.currentPage * viewSize.width, 0, viewSize.width, viewSize.height);
+    [scrollView scrollRectToVisible:rect animated:YES];
     
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)ascrollView{
     int x = scrollView.contentOffset.x / 320;
     [self.pageControl setCurrentPage:x];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)ascrollView{
+
 }
 
 @end
