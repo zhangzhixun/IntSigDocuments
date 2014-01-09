@@ -106,7 +106,7 @@
         Animation.fillMode = kCAFillModeBoth;
         
         [toView.layer addAnimation:Animation forKey:@"fromRight"];
-        
+
         
         CABasicAnimation *Animation1  = [CABasicAnimation animationWithKeyPath:@"transform"];
         CATransform3D rotationAndPerspectiveTransform1 = CATransform3DIdentity;

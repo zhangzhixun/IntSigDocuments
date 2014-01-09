@@ -21,4 +21,21 @@
     return nil;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_image forKey:@"image"];
+    [aCoder encodeObject:_childrenIndexPaths forKey:@"childrenIndexPaths"];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super init]) {
+        self.image = [aDecoder decodeObjectForKey:@"image"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.childrenIndexPaths = [aDecoder decodeObjectForKey:@"childrenIndexPaths"];
+        return self;
+    }
+    return nil;
+}
+
 @end
