@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3613483C18B2E78800B0EF9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3613483B18B2E78800B0EF9F /* ViewController.m */; };
+		3613483E18B2EE5300B0EF9F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3613483D18B2EE5300B0EF9F /* MapKit.framework */; };
+		362C36C818B33AB000967123 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362C36C718B33AB000967123 /* ViewController.xib */; };
+		362C36CC18B33D9C00967123 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 362C36CB18B33D9C00967123 /* CustomCell.xib */; };
 		36667F6118B21B7F00C40B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36667F6018B21B7F00C40B55 /* Foundation.framework */; };
 		36667F6318B21B7F00C40B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36667F6218B21B7F00C40B55 /* CoreGraphics.framework */; };
 		36667F6518B21B7F00C40B55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36667F6418B21B7F00C40B55 /* UIKit.framework */; };
@@ -32,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3613483A18B2E78800B0EF9F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		3613483B18B2E78800B0EF9F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		3613483D18B2EE5300B0EF9F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3613483F18B2F0DA00B0EF9F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		362C36C718B33AB000967123 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		362C36CB18B33D9C00967123 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCell.xib; path = ../CustomCell.xib; sourceTree = "<group>"; };
 		36667F5D18B21B7F00C40B55 /* MapTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36667F6018B21B7F00C40B55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36667F6218B21B7F00C40B55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3613483E18B2EE5300B0EF9F /* MapKit.framework in Frameworks */,
 				36667F6318B21B7F00C40B55 /* CoreGraphics.framework in Frameworks */,
 				36667F6518B21B7F00C40B55 /* UIKit.framework in Frameworks */,
 				36667F6118B21B7F00C40B55 /* Foundation.framework in Frameworks */,
@@ -96,6 +107,8 @@
 		36667F5F18B21B7F00C40B55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3613483F18B2F0DA00B0EF9F /* CoreLocation.framework */,
+				3613483D18B2EE5300B0EF9F /* MapKit.framework */,
 				36667F6018B21B7F00C40B55 /* Foundation.framework */,
 				36667F6218B21B7F00C40B55 /* CoreGraphics.framework */,
 				36667F6418B21B7F00C40B55 /* UIKit.framework */,
@@ -107,6 +120,10 @@
 		36667F6618B21B7F00C40B55 /* MapTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				362C36CB18B33D9C00967123 /* CustomCell.xib */,
+				3613483A18B2E78800B0EF9F /* ViewController.h */,
+				3613483B18B2E78800B0EF9F /* ViewController.m */,
+				362C36C718B33AB000967123 /* ViewController.xib */,
 				36667F6F18B21B7F00C40B55 /* AppDelegate.h */,
 				36667F7018B21B7F00C40B55 /* AppDelegate.m */,
 				36667F7218B21B7F00C40B55 /* Images.xcassets */,
@@ -220,6 +237,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36667F6B18B21B7F00C40B55 /* InfoPlist.strings in Resources */,
+				362C36C818B33AB000967123 /* ViewController.xib in Resources */,
+				362C36CC18B33D9C00967123 /* CustomCell.xib in Resources */,
 				36667F7318B21B7F00C40B55 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3613483C18B2E78800B0EF9F /* ViewController.m in Sources */,
 				36667F7118B21B7F00C40B55 /* AppDelegate.m in Sources */,
 				36667F6D18B21B7F00C40B55 /* main.m in Sources */,
 			);
@@ -361,10 +381,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Long (C79T35AR6W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapTableViewDemo/MapTableViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "MapTableViewDemo/MapTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,10 +397,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapTableViewDemo/MapTableViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "MapTableViewDemo/MapTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -443,6 +469,7 @@
 				36667F8B18B21B7F00C40B55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36667F8C18B21B7F00C40B55 /* Build configuration list for PBXNativeTarget "MapTableViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +478,7 @@
 				36667F8E18B21B7F00C40B55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
