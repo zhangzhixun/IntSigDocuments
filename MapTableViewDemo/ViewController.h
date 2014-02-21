@@ -11,6 +11,5 @@
 @interface ViewController : UIViewController
 
 @property(nonatomic,strong)UITableView *tableView;
-@property(nonatomic)BOOL isRollUpEnabled;
 
 @end
