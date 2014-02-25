@@ -88,7 +88,7 @@
 
 - (void)showTableView{
     [UIView animateWithDuration:0.3 animations:^{
-        self.tableView.frame = CGRectMake(0, TABLE_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
+        self.tableView.transform = CGAffineTransformIdentity;
         [showTableButton removeFromSuperview];
         map.frame = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
     } completion:^(BOOL finished) {
@@ -109,6 +109,10 @@
         NSLog(@"---1----scroll offset = %f",scrollOffset);
         if (scrollOffset < 0) {//下拉
             [UIView animateWithDuration:0.3 animations:^{
+//                CGAffineTransform trans = self.tableView.transform;
+//                self.tableView.transform = CGAffineTransformTranslate(trans, 0, fabsf(scrollOffset));
+                
+                
                 CGRect tableFrame = self.tableView.frame;
                 tableFrame.origin.y -= scrollOffset;
                 self.tableView.frame = tableFrame;
@@ -116,27 +120,32 @@
                 CGRect mapFrame = map.frame;
                 mapFrame.origin.y -= scrollOffset;
                 map.frame = mapFrame;
-                [self.tableView setContentOffset:CGPointZero];
             } completion:^(BOOL finished) {
+                [self.tableView setContentOffset:CGPointZero];
                 
             }];
             
         }else if(scrollOffset > 0){// 上拉
             [UIView animateWithDuration:0.3 animations:^{
+                
+//                CGAffineTransform trans = self.tableView.transform;
+//                self.tableView.transform = CGAffineTransformTranslate(trans, 0, -fabsf(scrollOffset));
+                
                 CGRect f = self.tableView.frame;
                 f.origin.y -= scrollOffset;
                 [self.tableView setFrame:f];
+                
                 f = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
                 CGFloat deltaY = TABLE_YPOINT - self.tableView.frame.origin.y;
                 f.origin.y -= deltaY;
                 [map setFrame:f];
                 [self.tableView setContentOffset:CGPointZero];
             } completion:^(BOOL finished) {
-                if (self.tableView.frame.origin.y < 80) {
+                if (self.tableView.frame.origin.y < 10) {
                     [map setFrame:CGRectMake(0, MAP_YPOINT - TABLE_YPOINT, self.view.bounds.size.width, FULL_HEIGHT)];
                     [self.tableView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, FULL_HEIGHT)];
                 }
-            }];            
+            }];
         }
     }
     else if(self.tableView.frame.origin.y == 0){//table全屏时
@@ -185,11 +194,10 @@
     if ((map.frame.origin.y > -60 || scrollView.contentOffset.y < -80) && self.tableView.frame.origin.y >= TABLE_YPOINT){
         isMapFullScreen = YES;
         [self.tableView setContentInset:UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)];
-        
         [UIView animateWithDuration:0.3 animations:^{
-            map.frame = self.view.bounds;
-            CGRect f = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height);
-            [self.tableView setFrame:f];
+            map.frame = CGRectMake(0, 0, self.view.bounds.size.width, FULL_HEIGHT);
+            //使用了transform属性
+            self.tableView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, FULL_HEIGHT - TABLE_YPOINT);
         } completion:^(BOOL finished) {
             [self.tableView setContentInset:UIEdgeInsetsZero];
             [self.view addSubview:showTableButton];
@@ -219,7 +227,7 @@
     }
     [cell.textLabel setText:[NSString stringWithFormat:@"Map-%ld",(long)indexPath.row]];
 
-    [cell setBackgroundColor:[UIColor yellowColor]];
+    [cell setBackgroundColor:[UIColor clearColor]];
     return cell;
 }
 
