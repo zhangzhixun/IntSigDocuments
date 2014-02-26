@@ -25,8 +25,9 @@
 #import <MapKit/MapKit.h>
 
 #define FULL_HEIGHT self.view.bounds.size.height
-#define TABLE_YPOINT 200
+#define TABLE_YPOINT 0
 #define MAP_YPOINT -100
+#define TABLE_CONTENT_INSET 200
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,MKMapViewDelegate>{
     MKMapView *map;
@@ -70,6 +71,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:self.tableView];
     self.tableView.autoresizesSubviews = YES;
+    [self.tableView setContentInset:UIEdgeInsetsMake(TABLE_CONTENT_INSET, 0, 0, 0)];
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(TABLE_CONTENT_INSET, 0, 0, 0);
     
     showTableButton = [[UIButton alloc]initWithFrame:CGRectMake(50, self.view.bounds.size.height - 100, 70, 40)];
     [showTableButton setTitle:@"显示列表" forState:UIControlStateNormal];
@@ -79,6 +82,7 @@
     [showTableButton.layer setBorderColor:[UIColor grayColor].CGColor];
     showTableButton.titleLabel.font = [UIFont systemFontOfSize:12.0];
     [showTableButton addTarget:self action:@selector(showTableView) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +100,7 @@
     }];
 }
 
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     isMapFullScreen = NO;
@@ -103,95 +108,26 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat scrollOffset = scrollView.contentOffset.y;
-    
-    if (self.tableView.frame.origin.y < TABLE_YPOINT && self.tableView.frame.origin.y > 0) {// table在上半部分时
-        isMapFullScreen = NO;
-        NSLog(@"---1----scroll offset = %f",scrollOffset);
-        if (scrollOffset < 0) {//下拉
-            [UIView animateWithDuration:0.3 animations:^{
-//                CGAffineTransform trans = self.tableView.transform;
-//                self.tableView.transform = CGAffineTransformTranslate(trans, 0, fabsf(scrollOffset));
-                
-                
-                CGRect tableFrame = self.tableView.frame;
-                tableFrame.origin.y -= scrollOffset;
-                self.tableView.frame = tableFrame;
-                
-                CGRect mapFrame = map.frame;
-                mapFrame.origin.y -= scrollOffset;
-                map.frame = mapFrame;
-            } completion:^(BOOL finished) {
-                [self.tableView setContentOffset:CGPointZero];
-                
-            }];
-            
-        }else if(scrollOffset > 0){// 上拉
-            [UIView animateWithDuration:0.3 animations:^{
-                
-//                CGAffineTransform trans = self.tableView.transform;
-//                self.tableView.transform = CGAffineTransformTranslate(trans, 0, -fabsf(scrollOffset));
-                
-                CGRect f = self.tableView.frame;
-                f.origin.y -= scrollOffset;
-                [self.tableView setFrame:f];
-                
-                f = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
-                CGFloat deltaY = TABLE_YPOINT - self.tableView.frame.origin.y;
-                f.origin.y -= deltaY;
-                [map setFrame:f];
-                [self.tableView setContentOffset:CGPointZero];
-            } completion:^(BOOL finished) {
-                if (self.tableView.frame.origin.y < 10) {
-                    [map setFrame:CGRectMake(0, MAP_YPOINT - TABLE_YPOINT, self.view.bounds.size.width, FULL_HEIGHT)];
-                    [self.tableView setFrame:CGRectMake(0, 0, self.view.bounds.size.width, FULL_HEIGHT)];
-                }
-            }];
-        }
-    }
-    else if(self.tableView.frame.origin.y == 0){//table全屏时
-        isMapFullScreen = NO;
-        if (scrollOffset < 0) {//触发下拉
-            [UIView animateWithDuration:0.3 animations:^{
-                CGRect tableFrame = self.tableView.frame;
-                tableFrame.origin.y -= scrollOffset;
-                self.tableView.frame = tableFrame;
-                
-            } completion:^(BOOL finished) {
-                
-            }];
-        }
-    }
-    else{//初始位置
-        NSLog(@"---2----scroll offset = %f",scrollOffset);
+    NSLog(@"scroll offset = %f",scrollOffset);
+    if (scrollOffset < -TABLE_CONTENT_INSET) {//initial position ,pull down
         if (!isMapFullScreen) {
-            if(scrollOffset <= 0) {  // 下拉
-                
-                CGRect f = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
-                f.origin.y -= scrollOffset/2;
-                [map setFrame:f];
-            }else{//触发上拉效果
-                if (self.tableView.frame.origin.y > 0 && scrollView.contentOffset.y < TABLE_YPOINT) {
-                    [UIView animateWithDuration:0.3 animations:^{
-                        CGRect f = self.tableView.frame;
-                        f.origin.y -= scrollOffset*1;
-                        [self.tableView setFrame:f];
-                        
-                        f = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
-                        f.origin.y -= scrollOffset;
-                        [map setFrame:f];
-                        [self.tableView setContentOffset:CGPointZero];
-                    } completion:^(BOOL finished) {
-                    }];
-                }
-
-            }
+            
+            CGRect f = CGRectMake(0, MAP_YPOINT, self.view.bounds.size.width, FULL_HEIGHT);
+            f.origin.y -= (scrollOffset + TABLE_CONTENT_INSET)/2;
+            [map setFrame:f];
+            
         }
+    }else if (scrollOffset > - TABLE_CONTENT_INSET && scrollOffset <=0){
+        CGRect f = CGRectMake(0, MAP_YPOINT, map.bounds.size.width, map.bounds.size.height);
+        f.origin.y -= scrollOffset + TABLE_CONTENT_INSET;
+        map.frame = f;
+        NSLog(@"set map frame");
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     // show the full map
-    if ((map.frame.origin.y > -60 || scrollView.contentOffset.y < -80) && self.tableView.frame.origin.y >= TABLE_YPOINT){
+    if ((map.frame.origin.y > -60 || scrollView.contentOffset.y < -80-TABLE_CONTENT_INSET) && self.tableView.frame.origin.y >= TABLE_YPOINT){
         isMapFullScreen = YES;
         [self.tableView setContentInset:UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)];
         [UIView animateWithDuration:0.3 animations:^{
@@ -199,7 +135,7 @@
             //使用了transform属性
             self.tableView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, FULL_HEIGHT - TABLE_YPOINT);
         } completion:^(BOOL finished) {
-            [self.tableView setContentInset:UIEdgeInsetsZero];
+            [self.tableView setContentInset:UIEdgeInsetsMake(TABLE_CONTENT_INSET, 0, 0, 0)];
             [self.view addSubview:showTableButton];
             [self.view bringSubviewToFront:showTableButton];
         }];
@@ -227,7 +163,7 @@
     }
     [cell.textLabel setText:[NSString stringWithFormat:@"Map-%ld",(long)indexPath.row]];
 
-    [cell setBackgroundColor:[UIColor clearColor]];
+    [cell setBackgroundColor:[UIColor yellowColor]];
     return cell;
 }
 
