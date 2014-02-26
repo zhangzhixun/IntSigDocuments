@@ -23,6 +23,7 @@
 		36667F7C18B21B7F00C40B55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36667F6418B21B7F00C40B55 /* UIKit.framework */; };
 		36667F8418B21B7F00C40B55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36667F8218B21B7F00C40B55 /* InfoPlist.strings */; };
 		36667F8618B21B7F00C40B55 /* MapTableViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36667F8518B21B7F00C40B55 /* MapTableViewDemoTests.m */; };
+		36CF438518BDB68D009E6AD3 /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CF438418BDB68D009E6AD3 /* CustomTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		36667F8118B21B7F00C40B55 /* MapTableViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapTableViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		36667F8318B21B7F00C40B55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36667F8518B21B7F00C40B55 /* MapTableViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapTableViewDemoTests.m; sourceTree = "<group>"; };
+		36CF438318BDB68D009E6AD3 /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = "<group>"; };
+		36CF438418BDB68D009E6AD3 /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				362C36CB18B33D9C00967123 /* CustomCell.xib */,
 				3613483A18B2E78800B0EF9F /* ViewController.h */,
 				3613483B18B2E78800B0EF9F /* ViewController.m */,
+				36CF438318BDB68D009E6AD3 /* CustomTableView.h */,
+				36CF438418BDB68D009E6AD3 /* CustomTableView.m */,
 				362C36C718B33AB000967123 /* ViewController.xib */,
 				36667F6F18B21B7F00C40B55 /* AppDelegate.h */,
 				36667F7018B21B7F00C40B55 /* AppDelegate.m */,
@@ -260,6 +265,7 @@
 			files = (
 				3613483C18B2E78800B0EF9F /* ViewController.m in Sources */,
 				36667F7118B21B7F00C40B55 /* AppDelegate.m in Sources */,
+				36CF438518BDB68D009E6AD3 /* CustomTableView.m in Sources */,
 				36667F6D18B21B7F00C40B55 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Long (C79T35AR6W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mike Long (C79T35AR6W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapTableViewDemo/MapTableViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "MapTableViewDemo/MapTableViewDemo-Info.plist";

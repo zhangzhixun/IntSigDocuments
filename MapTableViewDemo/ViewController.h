@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CustomTableView;
 
 @interface ViewController : UIViewController
 
-@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)CustomTableView *tableView;
 
 @end

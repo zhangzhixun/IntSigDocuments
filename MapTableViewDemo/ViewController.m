@@ -23,6 +23,7 @@
 
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
+#import "CustomTableView.h"
 
 #define FULL_HEIGHT self.view.bounds.size.height
 #define TABLE_YPOINT 0
@@ -62,7 +63,8 @@
     map.delegate = self;
     [self.view addSubview:map];
 
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, TABLE_YPOINT, self.view.bounds.size.width, FULL_HEIGHT) style:UITableViewStylePlain];
+    self.tableView = [[CustomTableView alloc] initWithFrame:CGRectMake(0, TABLE_YPOINT, self.view.bounds.size.width, FULL_HEIGHT) style:UITableViewStylePlain];
+//    [self.tableView setBackgroundView:nil];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -73,6 +75,9 @@
     self.tableView.autoresizesSubviews = YES;
     [self.tableView setContentInset:UIEdgeInsetsMake(TABLE_CONTENT_INSET, 0, 0, 0)];
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(TABLE_CONTENT_INSET, 0, 0, 0);
+    
+//    [self.tableView insertSubview:map belowSubview:self.tableView];
+    self.tableView.mapView = map;
     
     showTableButton = [[UIButton alloc]initWithFrame:CGRectMake(50, self.view.bounds.size.height - 100, 70, 40)];
     [showTableButton setTitle:@"显示列表" forState:UIControlStateNormal];
