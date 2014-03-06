@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eDb-Ha-cKT">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Sift View Controller-->
+        <scene sceneID="oBs-AO-xYU">
+            <objects>
+                <viewController storyboardIdentifier="Sift" id="2sv-Gd-cjx" customClass="SiftViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZyH-Sd-Y8V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="1Cb-Yi-8dg">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.99818403979260406" blue="0.91251283019107765" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.98527310636351595" blue="0.91710272840475215" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.42546280570652173" green="0.42546280570652173" blue="0.42546280570652173" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99774831417756149" green="1" blue="0.96102840032729631" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textShadowColor" red="1" green="0.94220546013506201" blue="0.74876124870656002" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="筛选" id="p7S-lz-0ll"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="1Cb-Yi-8dg" id="BgL-Ec-BeD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7g-ye-u6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="78"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zX2-3C-n6I">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="eDb-Ha-cKT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOa-cc-Ru1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99585305499033461" green="1" blue="0.91569153945592674" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VhX-hl-1Eb" kind="relationship" relationship="rootViewController" id="pRd-Z2-AKC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxC-zq-Ez3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="78"/>
+        </scene>
+        <!--Card View Controller - 公司名片夹-->
+        <scene sceneID="TJr-eD-CA8">
+            <objects>
+                <viewController id="VhX-hl-1Eb" customClass="CardViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DYm-iN-LOq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="公司名片夹" id="DTM-RT-0yg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLz-9w-gEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="78"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
