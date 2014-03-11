@@ -12,6 +12,11 @@
 #define SLIDE_OFFSET 80
 #define TABBAR_HEIGHT 49
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+#endif
+
+#define kIsRunVersionIOS7 kCFCoreFoundationVersionNumber > kCFCoreFoundationVersionNumber_iOS_6_1
+
 @interface CardViewController ()<UITableViewDataSource,UITableViewDelegate,SlideViewDelegate>{
     SiftViewController *siftVC;
     UIView *_maskView;
@@ -39,25 +44,36 @@
     [super viewDidLoad];
     isSlideShown = NO;
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - TABBAR_HEIGHT) style:UITableViewStylePlain];
+    if (kIsRunVersionIOS7) {
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - TABBAR_HEIGHT) style:UITableViewStylePlain];
+    }else{
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - TABBAR_HEIGHT - 44) style:UITableViewStylePlain];
+    }
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview: self.tableView];
 
-    
-    self.tabBar = [[UITabBar alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - TABBAR_HEIGHT, self.view.bounds.size.width, TABBAR_HEIGHT)];
+    if (kIsRunVersionIOS7) {
+        self.tabBar = [[UITabBar alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - TABBAR_HEIGHT, self.view.bounds.size.width, TABBAR_HEIGHT)];
+    }else{
+        self.tabBar = [[UITabBar alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - TABBAR_HEIGHT - 44, self.view.bounds.size.width, TABBAR_HEIGHT)];
+    }
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar.tiff"]];
     [self.view addSubview:self.tabBar];
 
     
-    _maskView = [[UIView alloc]initWithFrame:self.view.bounds];
+    _maskView = [[UIView alloc]initWithFrame:self.navigationController.view.bounds];
     _maskView.backgroundColor = [UIColor blackColor];
     _maskView.hidden = YES;
     _maskView.alpha = 0.0;
     [self.navigationController.view addSubview:_maskView];
     
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    self.extendedLayoutIncludesOpaqueBars = NO;
+    
+    if (kIsRunVersionIOS7) {
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    }else{
+        self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    }
     
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(leftBarButtonClicked)];
     self.navigationItem.leftBarButtonItem = leftButton;
@@ -76,7 +92,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - custom method
@@ -159,7 +174,6 @@
 
 -(void)viewWillLayoutSubviews{
     NSLog(@"%@,%@",NSStringFromSelector(_cmd),self);
-    
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
@@ -169,7 +183,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     NSLog(@"%@,%@",NSStringFromSelector(_cmd),self);
-    
 }
 
 @end

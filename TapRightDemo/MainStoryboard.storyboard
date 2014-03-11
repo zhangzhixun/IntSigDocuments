@@ -16,8 +16,7 @@
                             <navigationBar contentMode="scaleToFill" id="1Cb-Yi-8dg">
                                 <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.99818403979260406" blue="0.91251283019107765" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="1" green="0.98527310636351595" blue="0.91710272840475215" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.42546280570652173" green="0.42546280570652173" blue="0.42546280570652173" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.99774831417756149" green="1" blue="0.96102840032729631" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,7 +43,6 @@
                 <navigationController definesPresentationContext="YES" id="eDb-Ha-cKT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOa-cc-Ru1">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99585305499033461" green="1" blue="0.91569153945592674" alpha="1" colorSpace="calibratedRGB"/>
