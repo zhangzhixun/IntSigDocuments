@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ContainerViewController.h"
 #import "ViewController.h"
+#import "MenuViewController.h"
 #import "NSString+Language.h"
 
 @implementation AppDelegate
@@ -18,13 +20,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ViewController *rootVC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:rootVC];
-    self.window.rootViewController = navVC;
     
-
-
+    MenuViewController *menuVC = [[MenuViewController alloc]initWithNibName:@"MenuViewController" bundle:nil];
+    ViewController *contentVC = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:contentVC];
+    ContainerViewController *rootVC = [[ContainerViewController alloc] initWithContentViewController:navVC menuViewController:menuVC];
     
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     
     
@@ -34,8 +36,6 @@
         NSLog(@"%@ is Japanese? %d",s,[s isJapanese]);
         NSLog(@"%@ is Korean? %d",s,[s isKorean]);
         NSLog(@"%@ is in CJK? %d",s,[s isInScopeOfCJK]);
-        
-        
     }
     
     return YES;

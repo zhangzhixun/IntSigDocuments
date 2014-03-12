@@ -24,6 +24,7 @@
 		363E5E3618CEAA380060916B /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 363E5E3518CEAA380060916B /* MenuViewController.xib */; };
 		363E5E3C18CEAC140060916B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363E5E3B18CEAC140060916B /* MenuViewController.m */; };
 		363E5E3F18CEDBC60060916B /* NSString+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 363E5E3E18CEDBC60060916B /* NSString+Language.m */; };
+		36C568DE18D00CCD008D7C23 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C568DD18D00CCD008D7C23 /* ContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		363E5E3B18CEAC140060916B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ../MenuViewController.m; sourceTree = "<group>"; };
 		363E5E3D18CEDBC60060916B /* NSString+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Language.h"; sourceTree = "<group>"; };
 		363E5E3E18CEDBC60060916B /* NSString+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Language.m"; sourceTree = "<group>"; };
+		36C568DC18D00CCD008D7C23 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		36C568DD18D00CCD008D7C23 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 		363E5E0718CEA7E10060916B /* SlideRightDemo */ = {
 			isa = PBXGroup;
 			children = (
+				36C568DA18D00B96008D7C23 /* ContainerViewController */,
 				363E5E1018CEA7E10060916B /* AppDelegate.h */,
 				363E5E1118CEA7E10060916B /* AppDelegate.m */,
 				363E5E3A18CEAC140060916B /* MenuViewController.h */,
@@ -127,9 +131,9 @@
 				363E5E3518CEAA380060916B /* MenuViewController.xib */,
 				363E5E3018CEA84C0060916B /* ViewController.h */,
 				363E5E3118CEA84C0060916B /* ViewController.m */,
+				363E5E3218CEA84C0060916B /* ViewController.xib */,
 				363E5E3D18CEDBC60060916B /* NSString+Language.h */,
 				363E5E3E18CEDBC60060916B /* NSString+Language.m */,
-				363E5E3218CEA84C0060916B /* ViewController.xib */,
 				363E5E1318CEA7E10060916B /* Images.xcassets */,
 				363E5E0818CEA7E10060916B /* Supporting Files */,
 			);
@@ -163,6 +167,15 @@
 				363E5E2318CEA7E10060916B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36C568DA18D00B96008D7C23 /* ContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				36C568DC18D00CCD008D7C23 /* ContainerViewController.h */,
+				36C568DD18D00CCD008D7C23 /* ContainerViewController.m */,
+			);
+			name = ContainerViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +277,7 @@
 			files = (
 				363E5E3318CEA84C0060916B /* ViewController.m in Sources */,
 				363E5E1218CEA7E10060916B /* AppDelegate.m in Sources */,
+				36C568DE18D00CCD008D7C23 /* ContainerViewController.m in Sources */,
 				363E5E0E18CEA7E10060916B /* main.m in Sources */,
 				363E5E3F18CEDBC60060916B /* NSString+Language.m in Sources */,
 				363E5E3C18CEAC140060916B /* MenuViewController.m in Sources */,
@@ -469,6 +483,7 @@
 				363E5E2C18CEA7E10060916B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		363E5E2D18CEA7E10060916B /* Build configuration list for PBXNativeTarget "SlideRightDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +492,7 @@
 				363E5E2F18CEA7E10060916B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

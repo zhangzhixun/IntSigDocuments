@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MenuViewController.h"
+#import "ContainerViewController.h"
 
 @interface ViewController ()
 
@@ -30,17 +30,19 @@
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(leftBtnClicked)];
+    self.navigationItem.leftBarButtonItem = leftBtn;
+}
+
+- (void)leftBtnClicked{
+    if ([self.navigationController.parentViewController isKindOfClass:[ContainerViewController class]]) {
+        [(ContainerViewController *)self.navigationController.parentViewController handleMenuAnimated:YES];
+    }
     
-    MenuViewController *menuVC = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-//    [self.navigationController.view addSubview:menuVC.view ];
-    [self.navigationController addChildViewController:menuVC];
-    
-    [self didMoveToParentViewController:self.navigationController];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-//    [self.navigationController.view bringSubviewToFront:self.view];
-    
+
 }
 
 - (void)didReceiveMemoryWarning

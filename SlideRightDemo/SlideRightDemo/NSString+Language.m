@@ -8,7 +8,10 @@
 
 #import "NSString+Language.h"
 
+
+
 @implementation NSString (Language)
+
 
 - (BOOL)isChinese{
     unichar c;

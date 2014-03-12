@@ -7,6 +7,8 @@
 //
 
 #import "MenuViewController.h"
+#import "ContainerViewController.h"
+#import "ViewController.h"
 
 @interface MenuViewController ()
 
@@ -46,8 +48,14 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    cell.textLabel.text = @"aaa";
+    cell.textLabel.text = @"menu";
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.parentViewController isKindOfClass:[ContainerViewController class]]) {
+        [(ContainerViewController *)self.parentViewController handleMenuAnimated:YES];
+    }
 }
 
 @end
