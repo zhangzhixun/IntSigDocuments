@@ -27,6 +27,8 @@
 		3667D7BB18C5BB1A007B9716 /* tabbar1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3667D7BA18C5BB1A007B9716 /* tabbar1.tiff */; };
 		3667D7BE18C5C1CC007B9716 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3667D7BD18C5C1CC007B9716 /* CardCell.m */; };
 		3667D7C018C5C1F0007B9716 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3667D7BF18C5C1F0007B9716 /* CardCell.xib */; };
+		36C568E418D05F4C008D7C23 /* CCSRightPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C568E218D05F4C008D7C23 /* CCSRightPopViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		36C568E518D05F4C008D7C23 /* CCSRightPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C568E318D05F4C008D7C23 /* CCSRightPopViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		3667D7BC18C5C1CC007B9716 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
 		3667D7BD18C5C1CC007B9716 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 		3667D7BF18C5C1F0007B9716 /* CardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		36C568E118D05F4C008D7C23 /* CCSRightPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSRightPopViewController.h; path = ContainerViewController/CCSRightPopViewController.h; sourceTree = "<group>"; };
+		36C568E218D05F4C008D7C23 /* CCSRightPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSRightPopViewController.m; path = ContainerViewController/CCSRightPopViewController.m; sourceTree = "<group>"; };
+		36C568E318D05F4C008D7C23 /* CCSRightPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCSRightPopViewController.xib; path = ContainerViewController/CCSRightPopViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +131,7 @@
 		364BEE6318C45B750072859E /* TapRightDemo */ = {
 			isa = PBXGroup;
 			children = (
+				36C568E618D05F58008D7C23 /* CCSRightPopViewController */,
 				364BEE8C18C45CB50072859E /* MainStoryboard.storyboard */,
 				364BEE8E18C45D8F0072859E /* CardViewController.h */,
 				364BEE8F18C45D8F0072859E /* CardViewController.m */,
@@ -172,6 +178,16 @@
 				364BEE7F18C45B750072859E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36C568E618D05F58008D7C23 /* CCSRightPopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				36C568E118D05F4C008D7C23 /* CCSRightPopViewController.h */,
+				36C568E218D05F4C008D7C23 /* CCSRightPopViewController.m */,
+				36C568E318D05F4C008D7C23 /* CCSRightPopViewController.xib */,
+			);
+			name = CCSRightPopViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +268,7 @@
 				3667D7BB18C5BB1A007B9716 /* tabbar1.tiff in Resources */,
 				364BEE8D18C45CB50072859E /* MainStoryboard.storyboard in Resources */,
 				364BEE6818C45B750072859E /* InfoPlist.strings in Resources */,
+				36C568E518D05F4C008D7C23 /* CCSRightPopViewController.xib in Resources */,
 				3667D7C018C5C1F0007B9716 /* CardCell.xib in Resources */,
 				3667D7B718C5B83E007B9716 /* tabbar@2x.tiff in Resources */,
 				3667D7B918C5B926007B9716 /* tabbar.tiff in Resources */,
@@ -279,6 +296,7 @@
 				3667D7BE18C5C1CC007B9716 /* CardCell.m in Sources */,
 				364BEE6A18C45B750072859E /* main.m in Sources */,
 				364BEE9018C45D8F0072859E /* CardViewController.m in Sources */,
+				36C568E418D05F4C008D7C23 /* CCSRightPopViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,11 +417,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Long (C79T35AR6W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TapRightDemo/TapRightDemo-Prefix.pch";
 				INFOPLIST_FILE = "TapRightDemo/TapRightDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4DFADE3C-FB9F-4402-9DCD-B3DAC14D6151";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -413,11 +433,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mike Long (C79T35AR6W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TapRightDemo/TapRightDemo-Prefix.pch";
 				INFOPLIST_FILE = "TapRightDemo/TapRightDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4DFADE3C-FB9F-4402-9DCD-B3DAC14D6151";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
