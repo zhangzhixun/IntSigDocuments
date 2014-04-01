@@ -13,11 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    ViewController *vc = [[ViewController alloc]init];
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = vc;
-//    self.window.backgroundColor = [UIColor redColor];
-//    [self.window makeKeyAndVisible];
     return YES;
 }
 							
